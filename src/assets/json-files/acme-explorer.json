@@ -1,0 +1,137 @@
+{
+  "trips": [
+    {
+      "id": "01",
+      "version": 1,
+      "ticker": "1234-MMMN",
+      "title": "Barcelona",
+      "description": "Viaja a Barcelona",
+      "canceledReason": "",
+      "dateInit": "March 19,2015",
+      "dateEnd": "March 23,2015",
+      "pictures": "",
+      "stages": {},
+      "comments": {},
+      "sponsorShips": {},
+      "created": "March 17, 2015",
+      "status": "CREATED"
+    },
+    {
+      "id": "02",
+      "version": 1,
+      "ticker": "1234-MKMN",
+      "title": "Paris",
+      "description": "Viaja a Paris",
+      "canceledReason": "",
+      "dateInit": "Agosto 19,2015",
+      "dateEnd": "Agosto 23,2015",
+      "pictures": "",
+      "stages": {},
+      "comments": {},
+      "sponsorShips": {},
+      "created": "Agosto 17, 2015",
+      "status": "CREATED"
+    }
+  ],
+  "actors": [
+    {
+      "name": "",
+      "surname": "",
+      "email": "ricmercedes@gmail.com",
+      "password": "C4tzqges",
+      "phone": "8094819555",
+      "address": "sevilla",
+      "role": "EXPLORER",
+      "validated": "",
+      "id": 1
+    },
+    {
+      "name": "",
+      "surname": "",
+      "email": "ric.mercedes@gmail.com",
+      "password": "C4tzqges",
+      "phone": "246234736",
+      "address": "ksjdnfjksndfjk",
+      "role": "EXPLORER",
+      "validated": "",
+      "id": 2
+    },
+    {
+      "name": "",
+      "surname": "",
+      "email": "riquito@gmail.com",
+      "password": "C4tzqges",
+      "phone": "238423847",
+      "address": "akjsdhajkshdjksa",
+      "role": "EXPLORER",
+      "validated": "",
+      "id": 3
+    },
+    {
+      "name": "",
+      "surname": "",
+      "email": "hola@fakemail.com",
+      "password": "C4tzqges",
+      "phone": "2764283648273",
+      "address": "akjsdhajkshdjksa",
+      "role": "EXPLORER",
+      "validated": "",
+      "id": 4
+    },
+    {
+      "name": "",
+      "surname": "",
+      "email": "hola25@fakemail.com",
+      "password": "C4tzqges",
+      "phone": "234234",
+      "address": "werwe",
+      "role": "EXPLORER",
+      "validated": "",
+      "id": 5
+    },
+    {
+      "name": "",
+      "surname": "",
+      "email": "rico@fakemail.com",
+      "password": "C4tzqges",
+      "phone": "2423",
+      "address": "sfsd",
+      "role": "EXPLORER",
+      "validated": "",
+      "id": 6
+    },
+    {
+      "name": "ricar",
+      "surname": "sdfsdf",
+      "email": "ricaido@gmail.com",
+      "password": "C4tzqges",
+      "phone": "2482349",
+      "address": "wjwfd",
+      "role": "EXPLORER",
+      "validated": "",
+      "id": 7
+    },
+    {
+      "name": "Ric",
+      "surname": "fdsfsd",
+      "email": "Rics@gmail.com",
+      "password": "C4tzqges",
+      "phone": "sdfsd",
+      "address": "sdfsdf",
+      "role": "",
+      "validated": "",
+      "id": 8
+    },
+    {
+      "name": "marcos",
+      "surname": "sdfsd",
+      "email": "lolito@fakefake.com",
+      "password": "C4tzqges",
+      "phone": "239472",
+      "address": "skdhfsdh",
+      "role": "EXPLORER",
+      "validated": "",
+      "id": 9
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+    "actor": {
+        "email": "Email",
+        "password": "Password",
+        "name": "Name",
+        "surname": "Surname",
+        "phone": "Phone",
+        "address": "Address",
+        "role": "Role",
+        "register": "Register",
+        "update": "Update",
+        "register.title": "Register new actor"
+    },
+    "security": {
+        "login": "Login",
+        "logout": "Logout",
+        "enter.password": "Enter password",
+        "enter.email": "Enter email"
+    },
+    "register": {
+        "already.registered": "Already Registered?"
+    },
+    "trips": {
+        "trips": "Trips",
+        "list.trips": "List Trips",
+        "load.trips": "Load Trips",
+        "new.trip": "New Trip"
+    },
+    "search": {
+        "search": "Search"
+    },
+    "messages": {
+        "auth.login.correct": "The user has logged in",
+        "auth.registration.correct": "User Registered",
+        "auth.logout": "The user had logged out"
+    },
+    "errorMessages": {
+        "auth.user.not.found": "User not found",
+        "auth.wrong.password": "Wrong password",
+        "auth.argument.error": "The 'email' must be a valid string",
+        "auth.invalid.email": "Email bad format.",
+        "auth.weak.password": "Password should be at least 6 characters long.",
+        "auth.registration.failed": "Registration failed.",
+        "auth.logout.failed": "Logout failed."
+    }
+}

@@ -1,0 +1,24 @@
+img.image {
+    width: 50px;
+    margin: 2px;
+}
+
+thead {
+    color: darkred
+}
+
+button {
+    background-color: darkred;
+}
+
+div.card-header {
+    font-size: large;
+}
+
+div.card {
+    margin-top: 10px
+}
+
+.table {
+    margin-top: 10px
+}

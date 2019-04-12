@@ -1,0 +1,46 @@
+{
+    "actor": {
+        "email": "Correo electronico",
+        "password": "Contraseña",
+        "name": "Nombre",
+        "surname": "Apellido",
+        "phone": "Telefono",
+        "address": "Direccion",
+        "role": "Rol",
+        "register": "Registro",
+        "update": "Actualizar",
+        "register.title": "Registrar nuevo actor"
+    },
+    "security": {
+        "login": "Entrar",
+        "logout": "Salir",
+        "enter.password": "Entrar contraseña",
+        "enter.email": "Entrar correo electronico"
+    },
+    "register": {
+        "already.registered": "Ya te has registrado?"
+    },
+    "trips": {
+        "trips": "Viajes",
+        "list.trips": "Listar Viajes",
+        "load.trips": "Cargar Viajes",
+        "new.trip": "Nuevo Viaje"
+    },
+    "search": {
+        "search": "Buscar"
+    },
+    "messages": {
+        "auth.login.correct": "El usuario ha iniciado sesion",
+        "auth.registration.correct": "Usuario se ha registrado",
+        "auth.logout": "El usuario ha cerrado sesion"
+    },
+    "errorMessages": {
+        "auth.user.not.found": "Usuario no encontrado",
+        "auth.wrong.password": "Contraseña equivocada",
+        "auth.argument.error": "El 'correo electronico' debe ser una cadena valida",
+        "auth.invalid.email": "Correo electronico mal formato",
+        "auth.weak.password": "La contraseña debe tener 6 caracteres como minimo",
+        "auth.registration.failed": "El registro ha fallado",
+        "auth.logout.failed": "El cierre de sesion ha fallado"
+    }
+}
