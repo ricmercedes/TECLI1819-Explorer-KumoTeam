@@ -22,6 +22,7 @@ import { TranslatableComponent } from './components/translatable/translatable.co
 import { LocalizedDatePipe } from './components/shared/localized-data.pipe';
 import { registerLocaleData } from '@angular/common';
 import locales from '@angular/common/locales/es';
+import { HomeComponent } from './components/home/home.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyCa_LIae-1skmlVsyWMtPEC8EqOVKkSkJA',
@@ -52,7 +53,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HeaderComponent,
     FooterComponent,
     TranslatableComponent,
-    LocalizedDatePipe
+    LocalizedDatePipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

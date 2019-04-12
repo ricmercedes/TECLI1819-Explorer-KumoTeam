@@ -42,5 +42,9 @@
         "auth.weak.password": "Password should be at least 6 characters long.",
         "auth.registration.failed": "Registration failed.",
         "auth.logout.failed": "Logout failed."
+    },
+    "footer": {
+        "terms": "Terms and conditions",
+        "visitors": "Visitors"
     }
 }

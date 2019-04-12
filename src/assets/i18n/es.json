@@ -42,5 +42,9 @@
         "auth.weak.password": "La contraseña debe tener 6 caracteres como minimo",
         "auth.registration.failed": "El registro ha fallado",
         "auth.logout.failed": "El cierre de sesion ha fallado"
+    },
+    "footer": {
+        "terms": "Terminos y condiciones",
+        "visitors": "Visitantes"
     }
 }

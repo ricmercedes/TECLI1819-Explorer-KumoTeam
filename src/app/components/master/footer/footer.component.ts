@@ -16,7 +16,7 @@ export class FooterComponent extends TranslatableComponent implements OnInit {
 
   ngOnInit() {
     this.today = Date.now();
-    this.numClients = 1.23;
+    this.numClients = 123;
   }
 
 }
