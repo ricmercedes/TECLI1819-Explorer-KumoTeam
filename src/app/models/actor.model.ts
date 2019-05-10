@@ -8,7 +8,7 @@ export class Actor extends Entity {
     preferredLanguage: string;
     phone: string;
     password: string;
-    role: ['EXPLORER', 'MANAGER', 'ADMINISTRATOR', 'SPONSORSHIP'];
+    role: string; //['EXPLORER', 'MANAGER', 'ADMINISTRATOR', 'SPONSORSHIP'];
     banned: boolean;
     flatPaid: boolean;
     created: string;

@@ -5,6 +5,8 @@ import { TranslatableComponent } from '../../translatable/translatable.component
 //import { from } from 'rxjs';
 import { AuthService } from '../../../services/auth.service';
 import { MessageService } from 'src/app/services/message.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ActorRoleGuard } from '../../../guards/actor-role.guard';
 
 @Component({
   selector: 'app-login',
@@ -13,11 +15,21 @@ import { MessageService } from 'src/app/services/message.service';
 })
 export class LoginComponent extends TranslatableComponent {
   private email: string;
+  private returnUrl: string; //tomar en cuenta 
 
-  constructor(private authService: AuthService,
+  constructor(
+    private authService: AuthService,
     private translateService: TranslateService,
-    private messageService: MessageService) {
+    private messageService: MessageService,
+    private route: ActivatedRoute,
+    private router: Router) {
+
     super(translateService);
+
+  }
+
+  ngOnInit() {
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   onLogout() {
@@ -36,6 +48,7 @@ export class LoginComponent extends TranslatableComponent {
       .then(_ => {
         form.reset();
         this.email = email;
+        this.router.navigateByUrl(this.returnUrl);
       }).catch((error) => {
         console.log(error);
         this.messageService.notifyMessage('errorMessages.' +
@@ -43,7 +56,6 @@ export class LoginComponent extends TranslatableComponent {
       });
   }
 
-  // ngOnInit() {
-  // }
+
 
 }

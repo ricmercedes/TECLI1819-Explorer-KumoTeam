@@ -17,7 +17,8 @@ export class RegisterComponent extends TranslatableComponent implements OnInit {
   roleList: string[];
   submitted = false;
 
-  constructor(private authService: AuthService,
+  constructor(
+    private authService: AuthService,
     private fb: FormBuilder,
     private router: Router,
     private translateService: TranslateService) {

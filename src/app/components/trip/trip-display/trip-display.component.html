@@ -1,0 +1,99 @@
+<!-- <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font" -->
+<br />
+<br />
+<div class="card mb-3">
+  <h3 class="card-header">{{'trip.detail'|translate}}</h3>
+  <div class="card-body">
+    <h5 class="card-title">{{'trip.ticker'|translate}}</h5>
+    <h6 class="card-subtitle text-muted">{{trip.ticker}}</h6>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{'trip.title'|translate}}</h5>
+    <h6 class="card-subtitle text-muted">{{trip.title}}</h6>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{'trip.description'|translate}}</h5>
+    <h6 class="card-subtitle text-muted">{{trip.description}}</h6>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{'trip.price'|translate}}</h5>
+    <h6 class="card-subtitle text-muted">{{trip.price}}</h6>
+  </div>
+  <div class="card-body">
+    <img *ngIf="trip.picture != null && trip.picture.length != 0" class="card-img-top img-fluid"
+      style="width: 200px; display: block;" src="{{trip.picture}}" alt="trip.title">
+    <img *ngIf="!trip.picture || trip.picture.length === 0" class="card-img-top img-fluid"
+      style="width: 150px; display: block;" src="https://wingslax.com/wp-content/uploads/2017/12/no-image-available.png"
+      alt="{{trip.title}}">
+  </div>
+</div>
+
+<legend> {{'trip.comments'|translate}}</legend>
+<div class="accordion" id="accordionTrip">
+  <div *ngFor="let comment of trips.comment" class="card" style="max-width: 20rem;">
+    <div class="card-header">
+      <h5 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+          aria-expanded="true">{{trips.comment.title}}
+        </button>
+      </h5>
+    </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionTrip"></div>
+    <p class="card-text">{{trips.comment.commentText}}</p>
+    <small class="text-muted">{{'trip.comment-created'|translate}}:{{comment-created}} </small>
+  </div>
+</div>
+<br />
+<button (click)="goBack()" class="btn btn-primary">{{'back'|translate}}
+</button>
+<br />
+
+<!-- <app-comment-insert [trip]="trip"></app-comment-insert> -->
+<!-- <div class='card'>
+          <div class='card-header'>
+            {{pageTitle}}
+          </div>
+          <div class='card-body'>
+            <div class='row'>
+              <div class='col-md-2'>
+                Filter by
+              </div>
+              <div class='col-md-4'>
+                <input style="box-align:left" type='text' [(ngModel)]='listFilter' />
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-md-6'>
+                <h4 style="text-align:left">Filtered by: {{listFilter}}</h4>
+              </div>
+            </div>
+            <div class='table-responsive'>
+              <table class='table' *ngIf='trips && trips.length'>
+                <thead>
+                  <tr>
+                    <th>
+                      <button class='btn btn-primary' (click)='toggleImage()'>
+                        {{showImage ? 'Hide' : 'Show'}} Image
+                      </button>
+                    </th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor='let trip of filteredTrips'>
+                    <td>
+                      <img *ngIf='showImage' class="image" [src]='trip.imageUrl' [title]='tripTitle'>
+                    </td>
+                    <td>{{trip.title}}</td>
+                    <td>{{trip.description}}</td>
+                    <td>{{trip.dateInit}}</td>
+                    <td>{{trip.dateEnd}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+    </div> -->

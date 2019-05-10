@@ -2,11 +2,40 @@
   <div class="footer-left">
     <h3>Acme <span>Explorer</span></h3>
     <p class="footer-links">
-      <a href="/terms-and-conditions">{{'footer.terms' | translate}}</a>
+      <a href="/terms-and-conditions">
+        {{'footer.terms' | translate}}
+      </a>
     </p>
-    <p class="footer-company-name ">Acme-Explorer &copy;{{today | localizedDate}}</p>
+    <p class="footer-company-name ">
+      Acme-Explorer &copy;{{today}}
+    </p>
     <span class="text-muted">
-      <b>{{'footer.visitors' | translate}}:</b>{{numClients }}
+      <b>{{'footer.visitors' | translate}}:</b>{{ numClients }}
     </span>
+  </div>
+  <div class="footer-center">
+    <div>
+      <i class=" fa fa-map-marker"></i>
+      <p><span>Cayetano Germosen 10 </span>Santo Domingo, Dominican Republic</p>
+    </div>
+    <div>
+      <i class="fa fa-phone"></i>
+      <p>+1 809 532 9116</p>
+    </div>
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="mailto:support@acme-explorer.com">support@acme-explorer.com</a></p>
+    </div>
+  </div>
+  <div class="footer-right">
+    <p class="footer-company-about">
+      <span>sjsdfjshdjkfhskjdhfkj<!--{{'footer.about'|translate}}--></span>  jshdfkjshieueuryieury<!--{{'footer.about.content'|translate}}-->
+    </p>
+    <div class="footer-icons">
+      <a><i class=" fa fa-facebook"></i></a>
+      <a><i class=" fa fa-twitter"></i></a>
+      <a><i class=" fa fa-instagram"></i></a>
+      <a><i class=" fa fa-youtube"></i></a>
+    </div>
   </div>
 </footer>

@@ -7,10 +7,10 @@ export class Trip extends Entity {
     canceledReason: string;
     dateInit: string;
     dateEnd: string;
-    pictures: string;
-    stages: {};
-    comments: {};
-    sponsorShips: {};
+    picture: string;
+    price: { type: number, min: 0 };
+    //stages: {};
+    //sponsorShips: {};
     created: string;
     status: string;
 }

@@ -1,3 +1,36 @@
-<p>
-  application works!
-</p>
+<table datatable [dtOptions]="dtOptions" class="row-border hover" dt-columns="dtColumns" width="100%">
+  <thead>
+    <tr>
+      <th>Ticker</th>
+      <th *ngIf="this.authService.checkRole('MANAGER')">Full Name</th>
+      <th>Address</th>
+      <th>Total</th>
+      <th>Date</th>
+      <th>Cancellation</th>
+      <th></th>
+      <th *ngIf="this.authService.checkRole('EXPLORER')"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let o of applications">
+      <td>{{application.ticker}}</td>
+      <td *ngIf="this.authService.checkRole('MANAGER')">{{application.this}}</td>
+      <td>{{application.status}}</td>
+      <td>{{application.dateApplication|date:'short'}}</td>
+      <td>{{application.paid}}</td>
+      <td>{{application.datePayment | date:'short'}}</td>
+      <td>{{application.dateCancelation | date:'short'}}</td>
+      <!-- <td>{{application.rejectionComment}}</td> -->
+      <td>{{trip.id}}</td>
+      <td>
+        <a routerLink="applications/{{application.id}}" class="btn btn-primary btn-lg"
+          title="{{'details'|translate}}"></a>
+      </td>
+      <td *ngIf="this.authService.checkRole('EXPLORER')">
+        <button title="{{'cancel'|translate}}" [disabled]="application.status" class="btn btn-danger btn-lg"
+          data-title="Cancel" data-toggle="modal" data-target="#cancel" (click)="onCancelling(o)">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+      </td>
+    </tr>
+  </tbody>

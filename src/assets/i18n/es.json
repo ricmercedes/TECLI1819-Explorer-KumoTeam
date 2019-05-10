@@ -20,11 +20,11 @@
     "register": {
         "already.registered": "Ya te has registrado?"
     },
-    "trips": {
+    "trip": {
+        "travel": "Viaja",
         "trips": "Viajes",
-        "list.trips": "Listar Viajes",
-        "load.trips": "Cargar Viajes",
-        "new.trip": "Nuevo Viaje"
+        "list-trips": "Listar Viajes",
+        "new-trip": "Nuevo Viaje"
     },
     "search": {
         "search": "Buscar"
@@ -32,7 +32,12 @@
     "messages": {
         "auth.login.correct": "El usuario ha iniciado sesion",
         "auth.registration.correct": "Usuario se ha registrado",
-        "auth.logout": "El usuario ha cerrado sesion"
+        "auth.logout": "El usuario ha cerrado sesion",
+        "trip.deleted": "Viaje eliminado satisfactoriamente",
+        "back": "Atras",
+        "save": "Cancelar",
+        "delete": "Borrar",
+        "placeholder": "Entrar"
     },
     "errorMessages": {
         "auth.user.not.found": "Usuario no encontrado",
@@ -41,10 +46,34 @@
         "auth.invalid.email": "Correo electronico mal formato",
         "auth.weak.password": "La contraseña debe tener 6 caracteres como minimo",
         "auth.registration.failed": "El registro ha fallado",
-        "auth.logout.failed": "El cierre de sesion ha fallado"
+        "auth.logout.failed": "El cierre de sesion ha fallado",
+        "no.trips.found": "No se han encontrado viajes",
+        "add.trip.failed": "Agregar viaje ha fallado",
+        "denied.access.title": "Acceso denegado",
+        "denied.access.message": "No posee permisos para acceder a {{resource}} en este servidor"
     },
     "footer": {
         "terms": "Terminos y condiciones",
         "visitors": "Visitantes"
+    },
+    "denied-access-page": {
+        "deniedAccess":"Acceso Denegado",
+        "message-start":"No tiene permiso para acceder",
+        "message-end":"a este servidor"
+    },
+    "application": {
+        "applications": "Aplicaciones",
+        "my-applications": "Mis Aplicaciones",
+        "applicants": "Solicitantes"
+    },
+    "profile": {
+        "profile": "Perfil",
+        "edit": "Editar Perfil"
+    },
+    "admin": {
+        "administrate": "Administrar",
+        "list-actors": "Listar Actores",
+        "dashboard": "Mostrar Dashboard",
+        "warehouse": "Configurar WareHouse"
     }
 }

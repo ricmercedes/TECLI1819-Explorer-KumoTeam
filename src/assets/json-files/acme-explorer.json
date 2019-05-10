@@ -1,20 +1,23 @@
 {
   "trips": [
     {
-      "id": "01",
-      "version": 1,
+      "id": "13",
+      "version": 0,
       "ticker": "1234-MMMN",
       "title": "Barcelona",
       "description": "Viaja a Barcelona",
       "canceledReason": "",
       "dateInit": "March 19,2015",
       "dateEnd": "March 23,2015",
-      "pictures": "",
-      "stages": {},
-      "comments": {},
-      "sponsorShips": {},
       "created": "March 17, 2015",
-      "status": "CREATED"
+      "status": "CREATED",
+      "picture": "https://drive.google.com/open?id=1Aa1QWrEZOKYR31cPpqwtR5WNX-eHTwGU",
+      "price": "300",
+      "comment":{
+        "title":"Awesome",
+        "commentText": ["Nice trip", "Loved the city"],
+        "commentCreated": true
+      }
     },
     {
       "id": "02",
@@ -25,26 +28,37 @@
       "canceledReason": "",
       "dateInit": "Agosto 19,2015",
       "dateEnd": "Agosto 23,2015",
-      "pictures": "",
-      "stages": {},
-      "comments": {},
-      "sponsorShips": {},
       "created": "Agosto 17, 2015",
-      "status": "CREATED"
+      "status": "CREATED",
+      "picture": "https://drive.google.com/open?id=1CWHbMjb8ZaVsqyGsdNBZRKwUUoHbADfW",
+      "price": "150",
+      "comment":{
+        "title":"Awesome",
+        "commentText": ["Nice trip", "Loved the city"],
+        "commentCreated": true
+      }
+    },
+    {
+      "id": "03",
+      "version": 2,
+      "ticker": "1235-MKMN",
+      "title": "Santo Domingo",
+      "description": "Viaja a Santo Domingo",
+      "canceledReason": "",
+      "dateInit": "Agosto 19,2015",
+      "dateEnd": "Agosto 23,2015",
+      "created": "Agosto 17, 2015",
+      "status": "CREATED",
+      "picture": "",
+      "price": "200",
+      "comment":{
+        "title":"",
+        "commentText": ["Nice trip"],
+        "commentCreated": true
+      }
     }
   ],
   "actors": [
-    {
-      "name": "",
-      "surname": "",
-      "email": "ricmercedes@gmail.com",
-      "password": "C4tzqges",
-      "phone": "8094819555",
-      "address": "sevilla",
-      "role": "EXPLORER",
-      "validated": "",
-      "id": 1
-    },
     {
       "name": "",
       "surname": "",
@@ -132,6 +146,50 @@
       "role": "EXPLORER",
       "validated": "",
       "id": 9
+    },
+    {
+      "name": "Ricardo",
+      "surname": "Mercedes",
+      "email": "ricmercedes@gmail.com",
+      "password": "C4tzqges",
+      "phone": "8095329116",
+      "address": "Cayetano Germosen",
+      "role": "EXPLORER",
+      "validated": "",
+      "id": 10
+    },
+    {
+      "name": "Ricaidito",
+      "surname": "Mercedes",
+      "email": "ricaidito@gmail.com",
+      "password": "C4tzqges",
+      "phone": "8095329116",
+      "address": "Cayetano Germosen",
+      "role": "ADMINISTRATOR",
+      "validated": "",
+      "id": 11
+    },
+    {
+      "name": "albeltico",
+      "surname": "garcia",
+      "email": "albelto@gmail.com",
+      "password": "C4tzqges",
+      "phone": "23423423",
+      "address": "fsdfnsdfndj",
+      "role": "SPONSOR",
+      "validated": "",
+      "id": 12
+    },
+    {
+      "name": "taawwwluuu@gmail.com",
+      "surname": "Tolentino",
+      "email": "toletto@gmail.com",
+      "password": "C4tzqges",
+      "phone": "94958849859",
+      "address": "mmcheee",
+      "role": "MANAGER",
+      "validated": "",
+      "id": 13
     }
   ]
 }

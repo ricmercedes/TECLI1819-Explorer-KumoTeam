@@ -4,13 +4,37 @@ import { LoginComponent } from './components/security/login/login.component';
 import { RegisterComponent } from './components/security/register/register.component';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
-
+import { ActorRoleGuard } from '../app/guards/actor-role.guard';
+import { AuthGuardGuard } from '../app/guards/auth-guard.guard';
+import { from } from 'rxjs';
+import { DeniedAccessPageComponent } from './components/denied-access-page/denied-access-page.component';
+import { ProfileComponent } from './components/master/profile/profile.component';
+import { TripDisplayComponent } from './components/trip/trip-display/trip-display.component';
+import { ApplicationComponent } from './components/application/application.component';
+import { TripListComponent } from './components/trip/trip-list/trip-list.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
+  {
+    path: 'login', component: LoginComponent, canActivate: [ActorRoleGuard],
+    data: { expectedRole: 'anonymous' }
+  },
+  {
+    path: 'trips', children: [
+      { path: 'trips/:id', component: TripDisplayComponent },
+      { path: '', component: TripListComponent }
+    ]
+  },
+  // { path: 'new-trip', component: TripDisplayComponent },
+
+  { path: 'applications', component: ApplicationComponent },
+  { path: 'application/:id', component: ApplicationComponent },
+  { path: 'profile/:id', component: ProfileComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'logout', redirectTo: '/home' },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'denied-access', component: DeniedAccessPageComponent }
+  // { path: 'not-found', component: NotFoundPageComponent }
+  // { path: '**', redirectTo: '/not-found' },
 ];
 
 @NgModule({

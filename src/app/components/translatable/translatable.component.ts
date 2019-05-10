@@ -7,20 +7,31 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./translatable.component.css']
 })
 export class TranslatableComponent implements OnInit {
+  private language = 'es';
 
   constructor(private translate: TranslateService) {
     let lang = localStorage.getItem('language');
-
-    if (lang === 'null') {
-      lang = this.translate.getBrowserCultureLang();
+    console.log('lenguaje: ' + lang);
+    console.log('lenguaje: ' + this.language);
+    if (!lang) {
+      lang = this.translate.getBrowserLang();
+      if (lang) {
+        this.language = lang;
+      }
+      console.log('Idioma: ' + lang);
+    } else {
+      this.language = lang;
     }
-    translate.setDefaultLang(lang);
-    this.changeLanguage(lang);
+    this.changeLanguage(this.language);
   }
 
   changeLanguage(language: string) {
     this.translate.use(language);
     localStorage.setItem('language', language);
+    this.translate.setDefaultLang(language);
+    this.translate.currentLang = language;
+
+
   }
 
   ngOnInit() {

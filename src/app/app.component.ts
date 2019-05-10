@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TripComponent } from './components/trip/trip.component';
+import { TripDisplayComponent } from './components/trip/trip-display/trip-display.component';
 
 @Component({
   selector: 'app-root',

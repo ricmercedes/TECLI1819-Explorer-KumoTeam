@@ -5,7 +5,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/security/register/register.component';
-import { TripComponent } from './components/trip/trip.component';
+import { TripDisplayComponent } from './components/trip/trip-display/trip-display.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActorComponent } from './components/actor/actor.component';
 import { ApplicationComponent } from './components/application/application.component';
@@ -23,6 +23,10 @@ import { LocalizedDatePipe } from './components/shared/localized-data.pipe';
 import { registerLocaleData } from '@angular/common';
 import locales from '@angular/common/locales/es';
 import { HomeComponent } from './components/home/home.component';
+import { DeniedAccessPageComponent } from './components/denied-access-page/denied-access-page.component';
+import { ProfileComponent } from './components/master/profile/profile.component';
+import { TripListComponent } from './components/trip/trip-list/trip-list.component';
+import { DataTablesModule } from 'angular-datatables';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyCa_LIae-1skmlVsyWMtPEC8EqOVKkSkJA',
@@ -43,7 +47,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     RegisterComponent,
-    TripComponent,
+    TripDisplayComponent,
     ActorComponent,
     ApplicationComponent,
     MasterComponent,
@@ -54,7 +58,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     TranslatableComponent,
     LocalizedDatePipe,
-    HomeComponent
+    HomeComponent,
+    DeniedAccessPageComponent,
+    ProfileComponent,
+    TripListComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +69,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReactiveFormsModule,
     //AngularFontAwesomeModule,
     AppRoutingModule,
+    DataTablesModule,
     AngularFireModule.initializeApp(firebaseConfig),
     // CollapseModule.forRoot(),
     // BsDropdownModule.forRoot(),

@@ -1,0 +1,53 @@
+<div class="breacrumb">
+  <legend class="text-center">{{'trip.trips'|translate}}</legend>
+</div>
+
+<div *ngIf="data == undefined || data.length == 0">
+  {{'errorMessages.no.trips.found'|translate}}
+</div>
+
+<div *ngIf="data != undefined && data.length >  0" class="card-deck">
+  <div *ngFor="let trips of data" class="card mb-3">
+    <div class="card-header">
+      <h4 class="card-title">{{trips.title}}</h4>
+    </div>
+    <div class="card-body">
+      <div class="container-fluid text-center" ng-init="advstatus=true">
+        <img *ngIf="trips.picture != null && trips.picture.length != 0" class="card-img-top img-fluid mt-3"
+          style="object-fit:contain;" src="{{trips.picture}}" alt="{{trips.title}}">
+        <img *ngIf="!trips.picture || trips.picture.length === 0" class="card-img-top img-fluid"
+          style="object-fit:contain;" src="https://wingslax.com/wp-content/uploads/2017/12/no-image-available.png"
+          alt="{{trips.title}}">
+        <details>
+          <summary ng-hide="advstatus">{{trips.description | slice:0:50}}<span class="badge badge-light"
+              ng-click="advstatus=true">(...)</span>
+          </summary>
+          <p class="card-text">
+            {{trips.description}}
+          </p>
+        </details>
+        <span class="badge badge-primary">
+          {{trips.price}}$
+        </span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a *ngIf="this.authService.checkRole('EXPLORER')" routerLink="/trips/{{trips.id}}"
+        class="btn btn-primary pull-left">
+        <span class="fa fa-pencil" aria-hidden="true">
+          {{'trip.edit'|translate}}
+        </span>
+      </a>
+      <a *ngIf="!this.authService.checkRole('anonymous')" routerLink="/trips/display/{{trip.id}}"
+        class="btn btn-primary pull-left"><!--verificar este rol-->
+        <span class="fa fa-search-plus" aria-hidden="true">
+          {{'trip.details'|translate}}
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<button *ngIf="this.authService.checkRole('ADMINISTRATOR')" type="button" class="btn btn-primary" (click)="newTrip();">
+  {{'trip.new'|translate}}
+</button>

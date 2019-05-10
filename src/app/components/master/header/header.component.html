@@ -11,13 +11,50 @@
     <ul class="navbar-nav">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">{{'trips.trips'|translate}}
+          aria-haspopup="true" aria-expanded="false">{{'trip.travel'|translate}}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">{{'trips.list.trips'|translate}}</a>
-          <a class="dropdown-item" href="#">{{'trips.load.trips'|translate}}</a>
+          <a class="dropdown-item" routerLink="trips"
+            *ngIf="activeRole === 'EXPLORER'|| activeRole === 'anonymous'">{{'trip.trips'|translate}}</a>
+          <a class="dropdown-item" routerLink="trips/{{currentActor.id}}"
+            *ngIf="activeRole === 'MANAGER'">{{'trip.list-trips'|translate}}</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">{{'trips.new.trip'|translate}}</a>
+          <a class="dropdown-item" routerLink="new-trip"
+            *ngIf="activeRole === 'MANAGER'">{{'trip.new-trip'|translate}}</a>
+          <!--Tomar en cuenta el router link de new trip por si hay que ponerlo como children-->
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" *ngIf="activeRole === 'EXPLORER'||activeRole === 'MANAGER'">
+          {{'application.applications'|translate}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="applications/{{currentActor.id}}"
+            *ngIf="activeRole === 'EXPLORER'">{{'application.my-applications'|translate}}</a>
+          <a class="dropdown-item" routerLink="/applications"
+            *ngIf="activeRole === 'MANAGER'">{{'application.applicants'|translate}}</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false " *ngIf="activeRole === 'EXPLORER' || activeRole === 'MANAGER' 
+          || activeRole === 'SPONSOR' ">{{'profile.profile'|translate}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="profile/{{currentActor.id}}"
+            *ngIf="activeRole === 'EXPLORER' || activeRole === 'MANAGER' || activeRole === 'SPONSOR'">{{'profile.edit'|translate}}</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="/actors" *ngIf="activeRole === 'ADMINISTRATOR'">{{'admin.list-actors'}}</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" *ngIf="activeRole === 'ADMINISTRATOR'">{{'admin.administrate'|translate}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">{{'admin.dashboard'|translate}}</a>
+          <a class="dropdown-item" href="#">{{'admin.warehouse'|translate}}</a>
         </div>
       </li>
     </ul>
@@ -31,15 +68,21 @@
         <button (click)="changeLanguage('en')" class="btn-sm btn-primary mr-1">EN</button>
         <button (click)="changeLanguage('es')" class="btn-sm btn-primary mr-1">ES</button>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active" *ngIf="!currentActor">
         <a class="nav-link" routerLink="/register">{{'actor.register'|translate}}</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active" *ngIf="!currentActor">
         <a class="nav-link" routerLink="/login">{{'security.login'|translate}}</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/logout">{{'security.logout'|translate}}</a>
+      <li class="nav-item active" *ngIf="currentActor">
+        <a class="nav-link" style="cursor:pointer" (click)="logout()"
+          routerLink="/logout">{{'security.logout'|translate}}</a>
       </li>
+      <!-- <li class="nav-item active" *ngIf="activeRole === 'anonymous' || activeRole === 'EXPLORER'">
+        <a class="nav-link" href="#">
+          <span class="fa fa-shopping-cart" aria-hidden="true" style="font-size:1.5em;"></span>
+        </a>
+      </li> -->
     </ul>
   </div>
 </nav>

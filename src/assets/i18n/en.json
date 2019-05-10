@@ -20,11 +20,17 @@
     "register": {
         "already.registered": "Already Registered?"
     },
-    "trips": {
+    "trip": {
+        "travel": "Travel",
         "trips": "Trips",
-        "list.trips": "List Trips",
-        "load.trips": "Load Trips",
-        "new.trip": "New Trip"
+        "list-trips": "List Trips",
+        "new-trip": "New Trip",
+        "title": "Title",
+        "description":"Description",
+        "detail:":"Details",
+        "price":"Price",
+        "ticker": "Ticker",
+        "trip-comments": "Comments"
     },
     "search": {
         "search": "Search"
@@ -32,7 +38,12 @@
     "messages": {
         "auth.login.correct": "The user has logged in",
         "auth.registration.correct": "User Registered",
-        "auth.logout": "The user had logged out"
+        "auth.logout": "The user had logged out",
+        "trip.deleted": "Trip succesfully deleted",
+        "back": "Back",
+        "save": "Cancel",
+        "delete": "Delete",
+        "placeholder": "Enter"
     },
     "errorMessages": {
         "auth.user.not.found": "User not found",
@@ -41,10 +52,34 @@
         "auth.invalid.email": "Email bad format.",
         "auth.weak.password": "Password should be at least 6 characters long.",
         "auth.registration.failed": "Registration failed.",
-        "auth.logout.failed": "Logout failed."
+        "auth.logout.failed": "Logout failed.",
+        "no.trips.found": "No trips found",
+        "add.trip.failed": "Adding trip failed",
+        "denied.access.title": "Denied access",
+        "denied.access.message": "You don't have permission to access {{resource}} on this server"
     },
     "footer": {
         "terms": "Terms and conditions",
         "visitors": "Visitors"
+    },
+    "denied-access-page": {
+        "deniedAccess": "Denied Access",
+        "message-start": "You don't have permission to access",
+        "message-end": "on this server"
+    },
+    "application": {
+        "applications": "Applications",
+        "my-applications": "My Applications",
+        "applicants": "Applicants"
+    },
+    "profile": {
+        "profile": "Profile",
+        "edit": "Edit Profile"
+    },
+    "admin": {
+        "administrate": "Administrate",
+        "list-actors": "List Actors",
+        "dashboard": "Display Dashboard",
+        "warehouse": "Configure WareHouse"
     }
 }
