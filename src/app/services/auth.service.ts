@@ -8,6 +8,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { MessageService } from './message.service';
 import { HttpHeaders, HttpClient, HttpClientModule } from '@angular/common/http';
 import { Subject } from 'rxjs';
+import { CookieService } from 'ngx-cookie-service';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -25,7 +26,8 @@ export class AuthService {
   constructor(
     private fireAuth: AngularFireAuth,
     private messageService: MessageService,
-    private http: HttpClient) { }
+    private http: HttpClient,
+    private cookieService: CookieService) { }
 
   registerUser(actor: Actor) {
     return new Promise<any>((resolve, reject) => {
@@ -53,14 +55,17 @@ export class AuthService {
     return new Promise<any>((resolve, reject) => {
       this.fireAuth.auth.signInWithEmailAndPassword(email, password)
         .then(_ => {
-          this.messageService.notifyMessage('messages.auth.login.correct', 'alert alert-success');
           const url = environment.backendApiBaseURL + `/actors?email=` + email;
+          const token = this.fireAuth.auth.currentUser.getIdToken;
+          console.log(token);
           this.http.get<Actor[]>(url).toPromise()
             .then((actor: Actor[]) => {
-              this.currentActor = actor[0];
+              this.setCurrentActor(actor[0], token);
               this.userLoggedIn.next(true);
-              resolve(this.currentActor);
+              this.messageService.notifyMessage('messages.auth.login.correct', 'alert alert-success');
+              resolve(actor[0]);
             }).catch(error => {
+              this.messageService.notifyMessage('errorMessages.auth.login.failed', 'alert alert-danger');
               reject(error);
             });
         }).catch(error => {
@@ -93,17 +98,21 @@ export class AuthService {
     });
   }
   getRoles() {
-    if (this.currentActor.role === 'ADMINISTRATOR') {
-      return ['MANAGER'];
-    } else {
-      return this.role;
-    }
+    // if (this.currentActor.role === 'ADMINISTRATOR') {
+    //   return ['MANAGER'];
+    // } else {
+    return this.role;
 
   }
 
   getCurrentActor() {
-    console.log('currentactor: ' + this.currentActor);
-    return this.currentActor;
+    let result = null;
+    const currentActor = localStorage.getItem('currentActor');
+    if (currentActor) {
+      result = JSON.parse(currentActor);
+      console.log('currentactor: ' + result.id);
+    }
+    return result;
   }
 
   checkRole(roles: string): boolean {
@@ -123,5 +132,23 @@ export class AuthService {
       }
     }
     return result;
+  }
+
+  setCurrentActor(actor: any, token?: any) {
+    if (actor) {
+      localStorage.setItem('currentActor', JSON.stringify({
+        id: actor.id,
+        name: actor.name,
+        surname: actor.surname,
+        role: actor.role,
+        preferredLanguage: actor.preferredLanguage
+      }));
+      if (token) {
+        this.cookieService.set('currentToken', token);
+      }
+    } else {
+      localStorage.removeItem('currentActor');
+      this.cookieService.delete('currentToken');
+    }
   }
 }

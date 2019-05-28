@@ -1,0 +1,46 @@
+<div *ngIf="data == undefined || data.length == 0">
+  {{'errorMessages.no.trips.found'|translate}}
+</div>
+
+<table class="row-border hover" dt-columns="dtColumns" width="100%">
+  <!--datatable [dtOptions]="dtOptions"-->
+  <thead>
+    <tr>
+      <th>Ticker</th>
+      <th *ngIf="this.authService.checkRole('MANAGER')">Explorer</th>
+      <th>Title</th>
+      <th>Paid</th>
+      <th>Payment Date</th>
+      <th>Application Date</th>
+      <th>Cancelation Date</th>
+      <th>Status</th>
+      <th>Details</th>
+      <!-- <th *ngIf="this.authService.checkRole('EXPLORER')"></th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <!-- <tr *ngFor="let trips of data1">
+      <td>{{trips.ticker}}</td>
+      <td>{{trips.title}}</td>  -->
+    <tr *ngFor="let applications of data">
+      <td>{{tripTicker[applications.tripId]}}</td>
+      <!-- <td *ngIf="this.authService.checkRole('MANAGER')">{{application.this}}</td> -->
+      <td>{{tripTitle[applications.tripId]}}</td>
+      <td>{{applications.paid}}</td>
+      <td>{{applications.datePayment | date:'short'}}</td>
+      <td>{{applications.dateApplication|date:'short'}}</td>
+      <td>{{applications.dateCancelation | date:'short'}}</td>
+      <td>{{applications.status}}</td>
+      <!-- <td>{{trip.id}}</td> -->
+      <td>
+        <a routerLink="applications/{{applications.id}}" class="btn btn-primary btn-lg"
+          title="todavia no se pa que esto">{{'application.details'|translate}}</a>
+      </td>
+      <td *ngIf="this.authService.checkRole('EXPLORER')">
+        <button title="{{'cancel'|translate}}" [disabled]="applications.status" class="btn btn-danger btn-lg"
+          data-title="Cancel" data-toggle="modal" data-target="#cancel" (click)="onCancelling(application)">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+      </td>
+    </tr>
+  </tbody>

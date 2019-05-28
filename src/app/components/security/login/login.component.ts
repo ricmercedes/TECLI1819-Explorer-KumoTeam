@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { TranslatableComponent } from '../../translatable/translatable.component';
-//import { from } from 'rxjs';
+// import { from } from 'rxjs';
 import { AuthService } from '../../../services/auth.service';
 import { MessageService } from 'src/app/services/message.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -13,9 +13,9 @@ import { ActorRoleGuard } from '../../../guards/actor-role.guard';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent extends TranslatableComponent {
+export class LoginComponent extends TranslatableComponent implements OnInit {
   private email: string;
-  private returnUrl: string; //tomar en cuenta 
+  private returnUrl: string; // tomar en cuenta
 
   constructor(
     private authService: AuthService,
@@ -48,7 +48,9 @@ export class LoginComponent extends TranslatableComponent {
       .then(_ => {
         form.reset();
         this.email = email;
+        localStorage.setItem('Actor_id', _.id);
         this.router.navigateByUrl(this.returnUrl);
+        console.log(email + " " + password + _.id);
       }).catch((error) => {
         console.log(error);
         this.messageService.notifyMessage('errorMessages.' +

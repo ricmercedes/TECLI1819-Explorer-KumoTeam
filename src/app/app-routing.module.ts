@@ -10,7 +10,8 @@ import { from } from 'rxjs';
 import { DeniedAccessPageComponent } from './components/denied-access-page/denied-access-page.component';
 import { ProfileComponent } from './components/master/profile/profile.component';
 import { TripDisplayComponent } from './components/trip/trip-display/trip-display.component';
-import { ApplicationComponent } from './components/application/application.component';
+import { ApplicationListComponent } from './components/application/application-list/application-list.component';
+import { ApplicationDisplayComponent } from './components/application/application-display/application-display.component';
 import { TripListComponent } from './components/trip/trip-list/trip-list.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -20,14 +21,18 @@ const routes: Routes = [
   },
   {
     path: 'trips', children: [
-      { path: 'trips/:id', component: TripDisplayComponent },
+      { path: ':id', component: TripDisplayComponent },
       { path: '', component: TripListComponent }
     ]
   },
   // { path: 'new-trip', component: TripDisplayComponent },
 
-  { path: 'applications', component: ApplicationComponent },
-  { path: 'application/:id', component: ApplicationComponent },
+  {
+    path: 'applications', children: [
+      { path: ':id/:applicationID', component: ApplicationDisplayComponent },
+      { path: ':id', component: ApplicationListComponent }
+    ]
+  },
   { path: 'profile/:id', component: ProfileComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'logout', redirectTo: '/home' },

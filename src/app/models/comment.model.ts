@@ -1,10 +1,9 @@
-import { Trip } from './trip.model';
+// import { Trip } from './trip.model';
 
-export class Comment extends Trip {
-    title: string;
-    commentText: string[];
-    commentCreated: {
-        type: boolean
-        default: null
-    };
-}
+// export class Comment extends Trip {
+//     commentTitle: string;
+//     commentText: string;
+//     commentCreated: {
+//         type: Date
+//     };
+// }

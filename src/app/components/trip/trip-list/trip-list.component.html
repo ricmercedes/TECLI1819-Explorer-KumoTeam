@@ -16,10 +16,10 @@
         <img *ngIf="trips.picture != null && trips.picture.length != 0" class="card-img-top img-fluid mt-3"
           style="object-fit:contain;" src="{{trips.picture}}" alt="{{trips.title}}">
         <img *ngIf="!trips.picture || trips.picture.length === 0" class="card-img-top img-fluid"
-          style="object-fit:contain;" src="https://wingslax.com/wp-content/uploads/2017/12/no-image-available.png"
-          alt="{{trips.title}}">
+          style="object-fit:contain;"
+          src="https://pngimage.net/wp-content/uploads/2018/06/no-image-found-png-1-300x200.png" alt="{{trips.title}}">
         <details>
-          <summary ng-hide="advstatus">{{trips.description | slice:0:50}}<span class="badge badge-light"
+          <summary ng-hide="advstatus">{{trips.title | slice:0:50}}<span class="badge badge-light"
               ng-click="advstatus=true">(...)</span>
           </summary>
           <p class="card-text">
@@ -32,14 +32,15 @@
       </div>
     </div>
     <div class="card-footer">
-      <a *ngIf="this.authService.checkRole('EXPLORER')" routerLink="/trips/{{trips.id}}"
+      <a *ngIf="this.authService.checkRole('MANAGER')" routerLink="/trips/{{trips.id}}"
         class="btn btn-primary pull-left">
         <span class="fa fa-pencil" aria-hidden="true">
           {{'trip.edit'|translate}}
         </span>
       </a>
-      <a *ngIf="!this.authService.checkRole('anonymous')" routerLink="/trips/display/{{trip.id}}"
-        class="btn btn-primary pull-left"><!--verificar este rol-->
+      <!-- *ngIf="!this.authService.checkRole('anonymous')"  por si hay que ponerlo de nuevo en el list de los trips-->
+      <a routerLink="/trips/{{trips.id}}" class="btn btn-primary pull-left">
+        <!--verificar este rol-->
         <span class="fa fa-search-plus" aria-hidden="true">
           {{'trip.details'|translate}}
         </span>

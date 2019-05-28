@@ -13,4 +13,9 @@ export class Trip extends Entity {
     //sponsorShips: {};
     created: string;
     status: string;
+    comment: [{
+        commentTitle: string,
+        commentText: string,
+        commentCreated: Date
+    }];
 }

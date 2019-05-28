@@ -1,4 +1,7 @@
 {
+    "back": {
+        "back": "Atras"
+    },
     "actor": {
         "email": "Correo electronico",
         "password": "Contraseña",
@@ -24,7 +27,13 @@
         "travel": "Viaja",
         "trips": "Viajes",
         "list-trips": "Listar Viajes",
-        "new-trip": "Nuevo Viaje"
+        "new-trip": "Nuevo Viaje",
+        "title": "Titulo",
+        "description":"Descripcion",
+        "details":"Detalles",
+        "price":"Precio",
+        "ticker": "Ticker",
+        "comments": "Comentarios"
     },
     "search": {
         "search": "Buscar"
@@ -64,7 +73,8 @@
     "application": {
         "applications": "Aplicaciones",
         "my-applications": "Mis Aplicaciones",
-        "applicants": "Solicitantes"
+        "applicants": "Solicitantes",
+        "apply": "Aplicar"
     },
     "profile": {
         "profile": "Perfil",

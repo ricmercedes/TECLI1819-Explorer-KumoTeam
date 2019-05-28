@@ -8,9 +8,8 @@ import { RegisterComponent } from './components/security/register/register.compo
 import { TripDisplayComponent } from './components/trip/trip-display/trip-display.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActorComponent } from './components/actor/actor.component';
-import { ApplicationComponent } from './components/application/application.component';
+// import { ApplicationComponent } from './components/application/application.component';
 import { MasterComponent } from './components/master/master.component';
-import { SecurityComponent } from './components/security/security.component';
 import { LoginComponent } from './components/security/login/login.component';
 import { MessageComponent } from './components/master/message/message.component';
 import { HeaderComponent } from './components/master/header/header.component';
@@ -27,6 +26,9 @@ import { DeniedAccessPageComponent } from './components/denied-access-page/denie
 import { ProfileComponent } from './components/master/profile/profile.component';
 import { TripListComponent } from './components/trip/trip-list/trip-list.component';
 import { DataTablesModule } from 'angular-datatables';
+import { ApplicationListComponent } from './components/application/application-list/application-list.component';
+import { ApplicationDisplayComponent } from './components/application/application-display/application-display.component';
+import { CookieService } from 'ngx-cookie-service';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyCa_LIae-1skmlVsyWMtPEC8EqOVKkSkJA',
@@ -49,9 +51,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     RegisterComponent,
     TripDisplayComponent,
     ActorComponent,
-    ApplicationComponent,
+    // ApplicationComponent,
     MasterComponent,
-    SecurityComponent,
     LoginComponent,
     MessageComponent,
     HeaderComponent,
@@ -61,7 +62,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeComponent,
     DeniedAccessPageComponent,
     ProfileComponent,
-    TripListComponent
+    TripListComponent,
+    ApplicationListComponent,
+    ApplicationDisplayComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +85,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [AngularFireAuth, HttpClient],
+  providers: [AngularFireAuth, HttpClient, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

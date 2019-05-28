@@ -13,6 +13,7 @@ import { Trip } from '../models/trip.model';
 export class TripService {
 
   tripsUrl = environment.backendApiBaseURL + '/trips';
+  
 
   constructor(private http: HttpClient) { }
 

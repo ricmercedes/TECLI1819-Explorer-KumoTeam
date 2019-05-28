@@ -1,8 +1,8 @@
-<!-- <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font" -->
-<br />
-<br />
+<link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+<br /><br />
 <div class="card mb-3">
-  <h3 class="card-header">{{'trip.detail'|translate}}</h3>
+  <h3 class="card-header">{{'trip.details'|translate}}</h3>
+
   <div class="card-body">
     <h5 class="card-title">{{'trip.ticker'|translate}}</h5>
     <h6 class="card-subtitle text-muted">{{trip.ticker}}</h6>
@@ -23,30 +23,34 @@
     <img *ngIf="trip.picture != null && trip.picture.length != 0" class="card-img-top img-fluid"
       style="width: 200px; display: block;" src="{{trip.picture}}" alt="trip.title">
     <img *ngIf="!trip.picture || trip.picture.length === 0" class="card-img-top img-fluid"
-      style="width: 150px; display: block;" src="https://wingslax.com/wp-content/uploads/2017/12/no-image-available.png"
+      style="width: 150px; display: block;" src="https://pngimage.net/wp-content/uploads/2018/06/no-image-found-png-1-300x200.png"
       alt="{{trip.title}}">
   </div>
+  <div class="card-body">
+      <button *ngIf= "activeRole === 'EXPLORER'" (click)="saveApplication()" class="card-title">{{'application.apply'|translate}}</button>
+    </div>
 </div>
 
 <legend> {{'trip.comments'|translate}}</legend>
-<div class="accordion" id="accordionTrip">
-  <div *ngFor="let comment of trips.comment" class="card" style="max-width: 20rem;">
+<div class="accordion" id="accordionExample">
+  <div *ngFor="let comment of trip.comment" class="card" style="max-width: 20rem;">
     <div class="card-header">
       <h5 class="mb-0">
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-          aria-expanded="true">{{trips.comment.title}}
+          aria-expanded="true" aria-controls="collapseOne">{{comment.commentTitle}}
         </button>
       </h5>
     </div>
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionTrip"></div>
-    <p class="card-text">{{trips.comment.commentText}}</p>
-    <small class="text-muted">{{'trip.comment-created'|translate}}:{{comment-created}} </small>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample"></div>
+    <p class="card-text">{{comment.commentText}}</p>
+    <small class="text-muted">{{'trip.comment-created'|translate}}: {{comment.commentCreated}} </small>
   </div>
 </div>
 <br />
-<button (click)="goBack()" class="btn btn-primary">{{'back'|translate}}
+<button (click)="goBack()" class="btn btn-primary">{{'back.back'|translate}}
 </button>
 <br />
+
 
 <!-- <app-comment-insert [trip]="trip"></app-comment-insert> -->
 <!-- <div class='card'>

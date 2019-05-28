@@ -1,4 +1,7 @@
 {
+    "back": {
+        "back": "Back"
+    },
     "actor": {
         "email": "Email",
         "password": "Password",
@@ -26,11 +29,12 @@
         "list-trips": "List Trips",
         "new-trip": "New Trip",
         "title": "Title",
-        "description":"Description",
-        "detail:":"Details",
-        "price":"Price",
+        "description": "Description",
+        "details": "Details",
+        "price": "Price",
         "ticker": "Ticker",
-        "trip-comments": "Comments"
+        "comments": "Comments",
+        "comment-created": "Comment Created"
     },
     "search": {
         "search": "Search"
@@ -70,7 +74,9 @@
     "application": {
         "applications": "Applications",
         "my-applications": "My Applications",
-        "applicants": "Applicants"
+        "applicants": "Applicants",
+        "apply": "Apply",
+        "details":"Details"
     },
     "profile": {
         "profile": "Profile",

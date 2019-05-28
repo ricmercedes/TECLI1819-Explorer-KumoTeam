@@ -4,6 +4,7 @@ import { TranslatableComponent } from '../../translatable/translatable.component
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { TripService } from '../../../services/trip.service';
+import { ApplicationService } from 'src/app/services/application.service';
 
 @Component({
   selector: 'app-trip-display',
@@ -15,6 +16,7 @@ export class TripDisplayComponent extends TranslatableComponent implements OnIni
   id: string;
 
   constructor(
+    private application: ApplicationService,
     private tripService: TripService,
     private router: Router,
     private route: ActivatedRoute,
@@ -29,13 +31,16 @@ export class TripDisplayComponent extends TranslatableComponent implements OnIni
 
     this.id = this.route.snapshot.params['id'];
 
+
     this.tripService.getTrip(this.id)
-    .then ((val) => {
-      this.trip = val;
-      console.log('trip detail: ' + this.trip.id);
-    }).catch((err) => {
-      console.error(err);
-    });
+      .then((val) => {
+        this.trip = val;
+        console.log('trip detail: ' + this.trip.id);
+      }).catch((err) => {
+        console.error(err);
+      });
+
+
 
     // this.tripService.getTrip(this.id)
     // .then ((val) => {
@@ -45,9 +50,27 @@ export class TripDisplayComponent extends TranslatableComponent implements OnIni
     //   console.error(err);
     // });
   }
-
-  goBack(): void{
-    this.router.navigate(['/']);
+  saveApplication() {
+    const currentActorId = localStorage.getItem('Actor_id');
+    const jsondata = {
+      status: 'CREATED',
+      dateApplication: '12/03/2015',
+      paid: 'NO',
+      datePayment: '12/05/2015',
+      dateCancelation: '',
+      comments: '',
+      rejectionComment: '',
+      tripId: this.id,
+      actorId: currentActorId
+    };
+    console.log(jsondata);
+    this.application.postApplications(jsondata)
+      .then(res => {
+        console.log(res);
+      });
+  }
+  goBack(): void {
+    this.router.navigate(['/trips']);
   }
 }
   //   pageTitle: string = 'Trips';

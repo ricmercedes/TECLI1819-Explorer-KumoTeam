@@ -8,4 +8,6 @@ export class Application extends Entity {
     dateCancelation: string;
     comments: string;
     rejectionComment: string;
+    tripId: string;
+    actorId: string;
 }

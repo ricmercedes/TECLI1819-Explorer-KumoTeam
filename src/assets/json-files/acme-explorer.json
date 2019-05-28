@@ -1,7 +1,57 @@
 {
+  "applications": [
+    {
+      "status": "CREATED",
+      "dateApplication": "12/03/2015",
+      "paid": "NO",
+      "datePayment": "12/05/2015",
+      "dateCancelation": "",
+      "comments": "",
+      "rejectionComment": "",
+      "tripId": "03",
+      "actorId": "10",
+      "id": 1
+    },
+    {
+      "status": "CREATED",
+      "dateApplication": "12/03/2015",
+      "paid": "NO",
+      "datePayment": "12/05/2015",
+      "dateCancelation": "",
+      "comments": "",
+      "rejectionComment": "",
+      "tripId": "02",
+      "actorId": "10",
+      "id": 2
+    },
+    {
+      "status": "CREATED",
+      "dateApplication": "12/03/2015",
+      "paid": "NO",
+      "datePayment": "12/05/2015",
+      "dateCancelation": "",
+      "comments": "",
+      "rejectionComment": "",
+      "tripId": "01",
+      "actorId": "9",
+      "id": 3
+    },
+    {
+      "status": "CREATED",
+      "dateApplication": "12/03/2015",
+      "paid": "NO",
+      "datePayment": "12/05/2015",
+      "dateCancelation": "",
+      "comments": "",
+      "rejectionComment": "",
+      "tripId": "02",
+      "actorId": "9",
+      "id": 4
+    }
+  ],
   "trips": [
     {
-      "id": "13",
+      "id": "01",
       "version": 0,
       "ticker": "1234-MMMN",
       "title": "Barcelona",
@@ -11,13 +61,20 @@
       "dateEnd": "March 23,2015",
       "created": "March 17, 2015",
       "status": "CREATED",
-      "picture": "https://drive.google.com/open?id=1Aa1QWrEZOKYR31cPpqwtR5WNX-eHTwGU",
+      "picture": "https://static.amazon.jobs/locations/171/thumbnails/FC-Barcelona-Spain_image.jpg?1481893206",
       "price": "300",
-      "comment":{
-        "title":"Awesome",
-        "commentText": ["Nice trip", "Loved the city"],
-        "commentCreated": true
-      }
+      "comment": [
+        {
+          "commentTitle": "Excelent",
+          "commentText": "I loved every single part of the trip",
+          "commentCreated": "08/29/2015"
+        },
+        {
+          "commentTitle": "Wonderful",
+          "commentText": "It was great experience",
+          "commentCreated": "08/29/2015"
+        }
+      ]
     },
     {
       "id": "02",
@@ -30,13 +87,20 @@
       "dateEnd": "Agosto 23,2015",
       "created": "Agosto 17, 2015",
       "status": "CREATED",
-      "picture": "https://drive.google.com/open?id=1CWHbMjb8ZaVsqyGsdNBZRKwUUoHbADfW",
+      "picture": "https://www.telegraph.co.uk/content/dam/Travel/hotels/europe/france/paris/paris-cityscape-overview-guide.jpg?imwidth=450",
       "price": "150",
-      "comment":{
-        "title":"Awesome",
-        "commentText": ["Nice trip", "Loved the city"],
-        "commentCreated": true
-      }
+      "comment": [
+        {
+          "commentTitle": "Excelent",
+          "commentText": "I loved every single part of the trip",
+          "commentCreated": "08/29/2015"
+        },
+        {
+          "commentTitle": "Wonderful",
+          "commentText": "It was great experience",
+          "commentCreated": "08/29/2015"
+        }
+      ]
     },
     {
       "id": "03",
@@ -49,13 +113,20 @@
       "dateEnd": "Agosto 23,2015",
       "created": "Agosto 17, 2015",
       "status": "CREATED",
-      "picture": "",
+      "picture": "https://republicapro.com/assets/images/blog/santo_domingo_5_poins/01.jpg",
       "price": "200",
-      "comment":{
-        "title":"",
-        "commentText": ["Nice trip"],
-        "commentCreated": true
-      }
+      "comment": [
+        {
+          "commentTitle": "Excelent",
+          "commentText": "I loved every single part of the trip",
+          "commentCreated": "08/29/2015"
+        },
+        {
+          "commentTitle": "Wonderful",
+          "commentText": "It was great experience",
+          "commentCreated": "08/29/2015"
+        }
+      ]
     }
   ],
   "actors": [

@@ -16,7 +16,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" routerLink="trips"
             *ngIf="activeRole === 'EXPLORER'|| activeRole === 'anonymous'">{{'trip.trips'|translate}}</a>
-          <a class="dropdown-item" routerLink="trips/{{currentActor.id}}"
+          <a class="dropdown-item" routerLink="trips"
             *ngIf="activeRole === 'MANAGER'">{{'trip.list-trips'|translate}}</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" routerLink="new-trip"
@@ -30,9 +30,9 @@
           {{'application.applications'|translate}}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="applications/{{currentActor.id}}"
+          <a class="dropdown-item" routerLink="/applications/{{currentActor.id}}"
             *ngIf="activeRole === 'EXPLORER'">{{'application.my-applications'|translate}}</a>
-          <a class="dropdown-item" routerLink="/applications"
+          <a class="dropdown-item" routerLink="/applications/{{currentActor.id}}"
             *ngIf="activeRole === 'MANAGER'">{{'application.applicants'|translate}}</a>
         </div>
       </li>
